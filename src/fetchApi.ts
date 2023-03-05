@@ -15,7 +15,7 @@ export interface FetchResult {
   };
 }
 
-const fakeFata = fakeUsers(100);
+const fakeFata = fakeUsers(200);
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
