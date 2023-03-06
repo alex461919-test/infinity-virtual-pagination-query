@@ -10,6 +10,7 @@ const PAGE_SIZE = 20;
 const InfinityScroll: React.FC = () => {
   const query = useInfiniteQuery<FetchResult, Error>(['Users', 'Infinity'], ({ pageParam = 1 }) => fetchPage(pageParam, PAGE_SIZE), {
     getNextPageParam: (lastPage, pages) => lastPage.pageInfo.nextPage,
+    refetchOnWindowFocus: false,
   });
   const { data, error, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, isError } = query;
 

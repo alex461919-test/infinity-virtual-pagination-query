@@ -14,6 +14,7 @@ const VirtualInfinity: React.FC = () => {
   const query = useInfiniteQuery<FetchResult, Error>(['Users', 'VirtualInfinity'], ({ pageParam = 1 }) => fetchPage(pageParam, PAGE_SIZE), {
     getNextPageParam: (lastPage, pages) => lastPage.pageInfo.nextPage,
     getPreviousPageParam: (lastPage, pages) => lastPage.pageInfo.prevPage,
+    refetchOnWindowFocus: false,
   });
 
   const { data, error, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, isError } = query;
