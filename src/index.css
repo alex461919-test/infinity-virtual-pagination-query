@@ -3,3 +3,8 @@
 html {
   font-size: 14px;
 }
+
+.page-link {
+  min-width: 30px;
+  text-align: center;
+}
