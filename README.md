@@ -10,6 +10,6 @@
 
 ## Запуск
 
-Стандартный набор скриптов `npm run start` , `npm run build`.
+Стандартный набор скриптов `npm run start` ,`npm run build`.
 
 Или рабочая сборка на githup https://alex461919-test.github.io/infinity-virtual-pagination-query/ .
