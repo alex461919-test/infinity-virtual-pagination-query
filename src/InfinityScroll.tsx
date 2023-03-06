@@ -8,7 +8,7 @@ import { useLoadingSpinnerControl } from './Spinner';
 const PAGE_SIZE = 20;
 //
 const InfinityScroll: React.FC = () => {
-  const query = useInfiniteQuery<FetchResult, Error>(['Users', 'infinity'], ({ pageParam = 1 }) => fetchPage(pageParam, PAGE_SIZE), {
+  const query = useInfiniteQuery<FetchResult, Error>(['Users', 'Infinity'], ({ pageParam = 1 }) => fetchPage(pageParam, PAGE_SIZE), {
     getNextPageParam: (lastPage, pages) => lastPage.pageInfo.nextPage,
   });
   const { data, error, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, isError } = query;
@@ -37,8 +37,8 @@ const InfinityScroll: React.FC = () => {
 
   return (
     <>
-      <h1 className="h5">Бесконечный список</h1>
-      <table css={tableStyle} onScroll={handleScroll} className="my-3">
+      <h1 className="h5 my-4">Бесконечная прокрутка</h1>
+      <table css={tableStyle} onScroll={handleScroll}>
         <thead>
           <tr>
             <th>id</th>
@@ -80,7 +80,6 @@ const tableStyle = css`
     top: 0px;
     background-color: teal;
     color: white;
-    margin-bottom: 0.5rem;
   }
   th,
   td {
