@@ -8,6 +8,7 @@ const Pagination: React.FC<
     >
 > = ({ totalCount, pageSize, siblingCount = 2, currentPage, disabled = false, onChangePage = () => {}, ...navProps }) => {
   const pagination = usePagination({ totalCount, pageSize, siblingCount, currentPage });
+
   const clickHandler = React.useCallback<React.MouseEventHandler<HTMLElement>>(
     event => {
       event.preventDefault();
