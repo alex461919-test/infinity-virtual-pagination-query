@@ -49,4 +49,4 @@ async function fetchPage(page = 1, pageSize = Number.MAX_SAFE_INTEGER): Promise<
   };
 }
 
-export default fetchPage;
+export { fetchPage };

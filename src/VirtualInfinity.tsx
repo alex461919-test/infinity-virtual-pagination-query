@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
 import { useInfiniteQuery } from 'react-query';
-import fetchPage, { FetchResult } from './fetchApi';
+import { fetchPage, FetchResult } from './fetchApi';
 import { useLoadingSpinnerControl } from './Spinner';
 
 const PAGE_SIZE = 20;

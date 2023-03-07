@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import fetchPage, { FetchResult } from './fetchApi';
+import { fetchPage, FetchResult } from './fetchApi';
 import Pagination from './Pagination';
 import { useLoadingSpinnerControl } from './Spinner';
 
