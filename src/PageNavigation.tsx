@@ -33,7 +33,10 @@ const PageNavigation: React.FC = () => {
     <>
       <h1 className="h5 my-4">Постраничная навигация</h1>
       {totalPages > 1 ? (
-        <Pagination {...{ totalCount, pageSize, siblingCount: 2, currentPage, onChangePage: setPage, disabled: isPreviousData }} />
+        <Pagination
+          {...{ totalCount, pageSize, siblingCount: 2, currentPage, onChangePage: setPage, disabled: isPreviousData }}
+          className="my-3"
+        />
       ) : null}
       <table className="table table-sm table-borderless my-3">
         <thead className="table-info">
