@@ -15,7 +15,7 @@ export interface FetchResult {
   };
 }
 
-const fakeFata = fakeUsers(200);
+const fakeData = fakeUsers(200);
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -25,11 +25,11 @@ async function fetchPage(page = 1, pageSize = Number.MAX_SAFE_INTEGER): Promise<
   //
   await sleep(500);
 
-  const totalCount = fakeFata.length;
+  const totalCount = fakeData.length;
   const totalPages = Math.ceil(totalCount / pageSize);
   const currentPage = page <= totalPages ? page : totalPages;
   const offset = pageSize * (currentPage - 1);
-  const items = fakeFata.slice(offset, pageSize * currentPage);
+  const items = fakeData.slice(offset, pageSize * currentPage);
 
   const nextPage = currentPage < totalPages ? currentPage + 1 : null;
   const prevPage = currentPage > 1 ? currentPage - 1 : null;
