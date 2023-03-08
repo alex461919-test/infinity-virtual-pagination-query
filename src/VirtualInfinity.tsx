@@ -61,28 +61,28 @@ const VirtualInfinity: React.FC = () => {
     <>
       <h1 className="h5 my-4">Виртуальный бесконечный список</h1>
       <div css={tableStyle}>
-        <div className="container thead">
+        <header className="container thead">
           <div className="row" style={{ paddingLeft: headPaddingLeft, paddingRight: headPaddingRight }}>
             <div className="col-2 cell">id</div>
             <div className="col-5 cell">Email</div>
             <div className="col-5 cell">Имя</div>
           </div>
-        </div>
+        </header>
 
         <div ref={bodyRef} className="tbody">
           <div className="position-relative" style={{ height: rowVirtualizer.getTotalSize() }}>
-            <div className="container position-absolute" style={{ top: virtualItems[0]?.start ?? 0 }}>
+            <ul className="container position-absolute" style={{ listStyle: 'none', top: virtualItems[0]?.start ?? 0 }}>
               {virtualItems.map(item => {
                 const user = rows[item.index];
                 return (
-                  <div key={user.id} data-index={item.index} ref={rowVirtualizer.measureElement} className="row">
+                  <li key={user.id} data-index={item.index} ref={rowVirtualizer.measureElement} className="row">
                     <div className="col-2 cell">{user.id}</div>
                     <div className="col-5 cell">{user.email}</div>
                     <div className="col-5 cell">{`${user.lastName} ${user.firstName}`}</div>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
