@@ -2,7 +2,6 @@
 import React, { PropsWithChildren } from 'react';
 import { css } from '@emotion/react';
 import ReactDOM from 'react-dom/client';
-import { v4 as uuid } from 'uuid';
 
 interface IContextValue {
   showLoadingSpinner: () => () => void;
@@ -23,7 +22,7 @@ const waitStype = css`
 //background-color: #e5f0ff;
 //border: 1px solid #b6d4fe;
 
-class SpinnerControl extends Set<string> {
+class SpinnerControl extends Set<number> {
   private root: ReactDOM.Root;
 
   constructor() {
@@ -35,7 +34,7 @@ class SpinnerControl extends Set<string> {
     this.root = ReactDOM.createRoot(mountPoint);
   }
 
-  private addElement(id: string) {
+  private addElement(id: number) {
     if (this.size === 0) {
       this.root.render(
         <div css={waitStype}>
@@ -47,14 +46,14 @@ class SpinnerControl extends Set<string> {
     this.add(id);
   }
 
-  private deleteElement(id: string) {
+  private deleteElement(id: number) {
     this.delete(id);
     if (this.size < 1) this.root.render(null);
   }
 
   get contextValue() {
     const showLoadingSpinner = () => {
-      const id = uuid();
+      const id = Math.random();
       this.addElement(id);
       return () => {
         this.deleteElement(id);
