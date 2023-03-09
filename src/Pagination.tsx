@@ -12,7 +12,7 @@ const Pagination: React.FC<
   const clickHandler = React.useCallback<React.MouseEventHandler<HTMLElement>>(
     event => {
       event.preventDefault();
-      const page = Number((event.target as HTMLElement).dataset.page);
+      const page = Number((event.target as HTMLElement).closest('a')?.dataset.page);
       page && onChangePage(page);
     },
     [onChangePage],
