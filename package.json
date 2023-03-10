@@ -1,8 +1,8 @@
 {
   "name": "infinity-virtual-pagination-query",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
-  "homepage": "http://alex461919-test.github.io/infinity-virtual-pagination-query",
+  "homepage": "https://alex461919-test.github.io/infinity-virtual-pagination-query",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

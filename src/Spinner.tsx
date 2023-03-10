@@ -65,6 +65,7 @@ class SpinnerControl extends Set<number> {
 const spinnerControl = new SpinnerControl();
 
 const LoadingSpinnerContext = React.createContext<IContextValue>(spinnerControl.contextValue);
+LoadingSpinnerContext.displayName = 'LoadingSpinnerContext';
 
 const useLoadingSpinnerControl = () => React.useContext(LoadingSpinnerContext);
 

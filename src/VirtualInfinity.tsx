@@ -8,6 +8,8 @@ import { useLoadingSpinnerControl } from './Spinner';
 
 const PAGE_SIZE = 20;
 
+export const emptyArray: any[] = [];
+
 const VirtualInfinity: React.FC = () => {
   const bodyRef = React.useRef(null);
 
@@ -25,7 +27,7 @@ const VirtualInfinity: React.FC = () => {
     if (isFetching) return showLoadingSpinner();
   }, [showLoadingSpinner, isFetching]);
 
-  const rows = React.useMemo(() => data?.pages.flatMap(page => page.items) ?? [], [data]);
+  const rows = React.useMemo(() => data?.pages.flatMap(page => page.items) ?? emptyArray, [data]);
 
   const rowVirtualizer = useVirtualizer({
     count: rows.length,

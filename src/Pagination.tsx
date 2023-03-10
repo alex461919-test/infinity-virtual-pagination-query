@@ -34,7 +34,7 @@ const Pagination: React.FC<
           return (
             <li key={item.pageN} className={'page-item' + (item.pageN === currentPage ? ' active' : '') + (disabled ? ' disabled' : '')}>
               <a className="page-link" data-page={item.pageN} href={'#' + item.pageN}>
-                {item.type === 'dots' ? '...' : item.pageN}
+                {{ dots: '...', page: item.pageN }[item.type] ?? (item.pageN as never)}
               </a>
             </li>
           );
